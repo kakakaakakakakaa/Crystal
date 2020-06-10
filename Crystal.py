@@ -3,8 +3,6 @@ import os
 from os import listdir
 from os.path import isfile, join
 
-onlyfiles = [f for f in listdir("Commands/") if isfile(join("Commands/", f))]
-
 print("Welcome to CrystalOS")
 
 while True:
@@ -28,6 +26,7 @@ while True:
 			result = letter + result
 		print(result)
 	else:
+		onlyfiles = [f for f in listdir("Commands/") if isfile(join("Commands/", f))]
 		filename=uinput+".py"
 		if filename in onlyfiles:
 			os.system("python3 Commands/"+uinput+".py")
